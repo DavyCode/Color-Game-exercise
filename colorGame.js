@@ -1,11 +1,11 @@
-var colors = generateRandomColors(numSquares);                      //calls  the function generateRandomColors 
+var colors = generateRandomColors(numSquares);                         //calls  the function generateRandomColors 
 var numSquares = 6;
 
 var squares = document.querySelectorAll(".square");
-var pickedColor = pickColor();                              //call the function pick color which randomly picks a color for the game
+var pickedColor = pickColor();                                 //call the function pick color which randomly picks a color for the game
 var colorDisplay =document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
-var h1 = document.querySelector("h1");
+var h1 = document.querySelector("h1");                         
 var resetButton = document.querySelector("#reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
@@ -24,14 +24,17 @@ easyBtn.addEventListener("click", function() {
 
            for (var i = 0; i < squares.length; i++){
              if(colors[i]){
-                     
-         
-                 squares[i].style.background =colors[i];
+                   squares[i].style.background =colors[i];
              }else{
-                 squares[i].style.display ="none";
+                   squares[i].style.display ="none";
              }
        }
 });
+
+
+
+
+
 
 
 hardBtn.addEventListener("click", function() {
@@ -51,6 +54,9 @@ hardBtn.addEventListener("click", function() {
 
 
 
+
+
+
 resetButton.addEventListener("click", function() {
         //generate all new colors
         colors = generateRandomColors(numSquares);
@@ -65,6 +71,11 @@ resetButton.addEventListener("click", function() {
         }
         h1.style.background ="#232323";
 });
+
+
+
+
+
 
 colorDisplay.textContent = pickedColor;
 
@@ -94,6 +105,9 @@ for (var i = 0; i < squares.length; i++) {
 } 
 
 
+
+
+
 //function to change color squares to match correct chosen color
 function changeColors(color){
         //loop through all squares
@@ -105,6 +119,8 @@ function changeColors(color){
 }
 
 
+
+
 //funtion to randomly pick a color
 
 function pickColor() {
@@ -112,6 +128,9 @@ function pickColor() {
        var random=Math.floor( Math.random() * colors.length);
        return colors[random];
 }
+
+
+
 
 
 //function take a number and generate "x" number of random colors inside of an array
@@ -126,6 +145,8 @@ function generateRandomColors(num){
    //return array
    return arr;
 }
+
+
 
 
 
